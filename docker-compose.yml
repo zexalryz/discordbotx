@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: zxvl
+      MONGO_INITDB_ROOT_PASSWORD: Raja!234
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - my-bridge-network
+
+volumes:
+  mongodb_data_container:
+  
+networks:
+  my-bridge-network:
